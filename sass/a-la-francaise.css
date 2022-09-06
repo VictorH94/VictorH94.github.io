@@ -1,0 +1,249 @@
+@import "animations/animations.css";
+#main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .footer-ctnr .footer-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#header-menu {
+  font-family: "Shrikhand", sans-serif;
+  position: relative;
+}
+#header-menu .header-ctnr {
+  height: 65px;
+  max-width: 100%;
+}
+#header-menu .header-ctnr a i {
+  font-size: 20px;
+  position: absolute;
+  left: 35px;
+  /* bottom: 12px; */
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#header-menu .header-ctnr .img-logo-ohmyfood {
+  font-family: Shrikhand, "cursive";
+  height: 30px;
+  max-width: 100%;
+}
+
+.img-menu {
+  width: 100%;
+  height: 32vh;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#main-ctnr {
+  position: relative;
+}
+#main-ctnr .title-heart {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  margin-top: -25px;
+}
+#main-ctnr .title-heart h2 {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+  padding: 30px 16px;
+  position: relative;
+}
+#main-ctnr .title-heart button {
+  border: none;
+}
+#main-ctnr .title-heart button i {
+  position: absolute;
+  right: 35px;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+#main-ctnr .title-heart button .icon-solid {
+  color: transparent;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+#main-ctnr .title-heart button:hover .icon-solid {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.02);
+}
+#main-ctnr #menu-ctnr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  overflow: hidden;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr h3 {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 8px;
+  font-weight: 400;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr h3::after {
+  content: "";
+  height: 4px;
+  width: 42px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
+  opacity: 0;
+  -webkit-animation: menuItemAppear 0.78s ease-in-out forwards;
+          animation: menuItemAppear 0.78s ease-in-out forwards;
+  width: 388px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 10px auto 10px auto;
+  overflow: hidden;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:nth-child(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:nth-child(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr h4 {
+  margin: 0 0 10px 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr p {
+  margin: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr .menu-item-description {
+  width: 88%;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr .menu-item-price {
+  text-align: right;
+  margin-top: -20px;
+  width: 100%;
+  font-weight: 700;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox {
+  background-color: #99E2D0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -22%;
+  width: 16%;
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
+  background-color: white;
+  padding: 3px;
+  border-radius: 50%;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-ctnr {
+  transition: 0.4s linear width;
+  width: 78%;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
+  transition: 0.4s linear right;
+  right: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
+  -webkit-animation: icon-spin 0.7s ease-in-out;
+          animation: icon-spin 0.7s ease-in-out;
+}
+#main-ctnr .order-ctnr {
+  background-color: #f6f6f6;
+  height: 140px;
+  margin-top: -19px;
+}
+#main-ctnr .order-ctnr .order-menu {
+  width: 175px;
+  background-color: #FF79DA;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  padding: 12px 20px;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.8), rgba(255, 121, 218, 0.8));
+  cursor: pointer;
+  color: #fff;
+  transition-duration: 0.3s;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.73);
+}
+
+#footer {
+  background-color: #353535;
+  height: 200px;
+  width: 100%;
+}
+#footer .footer-ctnr {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+#footer .footer-ctnr h2 {
+  font-family: Shrikhand, "cursive";
+  color: #fff;
+  font-size: 17px;
+}
+#footer .footer-ctnr .footer-ul {
+  list-style: none;
+  line-height: 28px;
+  padding-top: 10px;
+  font-size: 14px;
+}
+#footer .footer-ctnr .footer-ul .footer-li {
+  margin-top: 0;
+}
+#footer .footer-ctnr .footer-ul .footer-li .footer-link {
+  text-decoration: none;
+  color: #fff;
+}
+#footer .footer-ctnr .footer-ul .footer-li .footer-link .footer-icon {
+  padding-right: 10px;
+  font-size: 13px;
+}/*# sourceMappingURL=a-la-francaise.css.map */

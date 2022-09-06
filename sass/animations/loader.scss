@@ -1,0 +1,52 @@
+$white-smoke: #f6f6f6;
+$secondary: #FF79DA;         
+$tertiary: #99E2D0;
+
+%flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    $animation-duration: 1s;
+    $animation-count: 3;
+    position: fixed;
+    @extend %flexcenter;
+    background-color: $white-smoke;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;   
+    opacity: 0.9;
+    animation: disappear 200ms $animation-duration * $animation-count forwards;
+    transform-origin: top;
+    &::after {
+        content: "";
+        height: 120px;
+        width: 120px;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $secondary;
+        border-bottom: 5px solid $tertiary;
+        border-radius: 50%;
+        animation: spin $animation-duration infinite ease-in-out;
+        animation-iteration-count: $animation-count;
+    }
+}
+
+@keyframes disappear {
+    0% {
+       transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,294 @@
+@import "reset/reset.scss";
+@import "font/font.scss";
+@import "variables/variables.scss";
+@import "mixins/mixins.scss";
+@import "extend/extend.scss";
+@import "animations/animations.css";
+@import "animations/loader.scss";
+@import "la-palette-du-gout.scss";
+@import "la-note-enchantee.scss";
+@import "a-la-francaise.scss";
+@import "le-delice-des-sens.scss";
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#main-header {
+    font-family: 'Shrikhand', cursive;
+    background-color: $white;
+    height: 75px;
+    box-shadow: 2px 2px 2px 1px rgba(127, 127, 127, 0.2);
+    @extend %flexcenter;
+    img {
+        width: 170px;
+        padding-top: 15px;
+    }
+}
+
+#main-ctnr {
+    width: 100%;
+    height: auto;
+}   
+
+#main-page-ctnr {
+    margin: 0 auto
+}
+
+#search-section {
+    background-color: $light-grey;
+    height: 55px;
+    @extend %flexcenter;
+    i {
+        font-size: 16px;
+    }
+    input {
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        width: 150px;
+        padding-left: 14px;
+        font-weight: 600;
+   }
+}
+
+#search-restaurant {
+    background-color: $white-smoke;
+    height: 350px;
+    @extend %flexcolumncenter;
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+    p {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 300;
+        padding: 25px 0;
+    }
+    button {
+        background-color: $secondary;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        padding: 12px 20px;
+        @include linear-gradient;
+        cursor: pointer;
+        color: #fff;
+        transition-duration: 0.30s;
+        box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 73%);
+        &:hover {
+            transform: scale(1.02);
+            opacity: 0.7;
+        }
+    }
+}
+
+#restaurant-choice {
+    background-color: $white;
+    height: 400px;
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-top: 30px;
+        padding: 25px 20px;        
+    }
+
+    ol {
+        @extend %flexcolumncenter;
+        gap: 16px;
+        width: 100%;
+        counter-reset: number;
+        list-style-type: none;
+    }
+       
+    & li {
+        @extend %flexcenter;
+        font-size: 22px;
+        background-color: $white-smoke;
+        border-radius: 20px;
+        height: 70px;
+        width: 85%;
+        padding: 10px 20px;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.10);
+        margin-left: 10px;
+
+        &:hover {
+            @include appearance;
+            background-color: $primary2;
+
+            i {
+                color: $primary;
+            }
+        }
+        position: relative;
+
+        &::before {
+            counter-increment: number;
+            content: counters(number,".") " ";
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            position: absolute;
+            left: -12px;
+            background-color: $primary;
+            color: #fff;
+            @extend %flexcenter;
+        }
+    } 
+        & i {
+            font-size: 20px;
+            padding-right: 20px;
+            color: $grey;
+        }
+
+        & span {
+            padding-left: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+}
+
+#restaurants {
+    background-color: $white-smoke;
+    height: 1150px;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;  
+            
+    .card-restaurant {
+        max-width: 100%;
+        margin: auto;
+        position: relative;
+        
+        h2 {
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        & .menu_card {
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+                                    
+            & .card-bloc {
+                background-color: $white;
+                border-radius: 15px;
+                text-decoration: none;
+                display: block;
+                position: relative;
+                margin: 12px 0px 5px 0px;
+                border: 1px solid transparent;
+               
+                & .img-card {
+                    height: 170px;
+                    width: 750px;
+                    border-radius: 15px 15px 0 0;
+                    object-fit: cover;
+                }
+
+                & .bloc-new {
+                    background-color: $tertiary;
+                    color: $dark-green;
+                    border-radius: 3px;
+                    padding: 5px;
+                    position: absolute;
+                    top: 14px;
+                    right: 10px;
+                    font-size: 13px;
+                }
+
+                & .menu_description {
+                    background-color: $white;
+                    @extend %flexbetweencenter;
+                    padding: 15px 20px 15px 15px;
+                    position: relative;
+                    
+                    & .menu_card_description {
+                        @extend %flexcolumstart;
+
+                        h3 {
+                            color: $black;
+                            font-weight: 900;
+                        }
+
+                        span {
+                            color: $dark-grey;
+                            font-weight: bold;
+                            font-size: 15px;
+                        }
+                    }
+                    
+                    i {
+                        position: absolute;
+                        right: 16px;
+                        transform: translateY(-50%);
+                        font-size: 20px;
+                    }
+
+                    & .icon-solid {
+                        color: transparent;
+                        @include linear-gradient(0.9);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        opacity: 0;
+                        transition: all 200ms ease-in-out;
+                    }
+
+                    &:hover .icon-solid {
+                        opacity: 1;
+                        transform: translateY(-50%) scale(1.02);
+                    }
+
+                }
+            }
+        }
+    }
+}
+#footer {
+    background-color: $dark-shade-grey;
+    height: 200px;
+    width: 100%;
+    
+    .footer-ctnr {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        h2 {
+            @include font-family;
+            color: $white;
+            font-size: 17px;
+        }
+
+        & .footer-ul {
+            @extend %flexcolumstart;
+            list-style: none;
+            line-height: 28px;
+            padding-top: 10px;
+            font-size: 14px;
+
+            & .footer-li {
+                margin-top: 0;
+
+                & .footer-link {
+                    text-decoration: none;
+                    color:#fff;
+
+                    & .footer-icon {
+                        padding-right: 10px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+  

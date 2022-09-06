@@ -1,0 +1,11 @@
+@mixin appearance {
+    transform: scale(1.02);
+}
+
+@mixin linear-gradient($gradient: 0.8) {
+    background-image: linear-gradient(to top, rgba(147, 86, 220, $gradient), rgba(255, 121, 218, $gradient));
+}
+
+@mixin font-family {
+    font-family: Shrikhand,"cursive";
+}

@@ -3,7 +3,7 @@
 @import "variables/variables.scss";
 @import "mixins/mixins.scss";
 @import "extend/extend.scss";
-@import "animations/animations.css";
+@import "animations/animations.scss";
 @import "animations/loader.scss";
 @import "la-palette-du-gout.scss";
 @import "la-note-enchantee.scss";
@@ -18,7 +18,7 @@ body, html {
     width: 100%;
     height: auto;
 
-    #main-header {
+     #main-header {
         font-family: 'Shrikhand', cursive;
         background-color: $white;
         height: 75px;
@@ -106,64 +106,62 @@ body, html {
                 width: 100%;
                 counter-reset: number;
                 list-style-type: none;
-            }
-               
-            & li {
-                @extend %flexcenter;
-                font-size: 22px;
-                background-color: $white-smoke;
-                border-radius: 20px;
-                height: 70px;
-                width: 85%;
-                padding: 10px 20px;
-                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.10);
-                margin-left: 10px;
-        
-                &:hover {
-                    @include appearance;
-                    background-color: $primary2;
-        
-                    i {
-                        color: $primary;
-                    }
-                }
-                position: relative;
-        
-                &::before {
-                    counter-increment: number;
-                    content: counters(number,".") " ";
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: -12px;
-                    background-color: $primary;
-                    color: #fff;
-                    @extend %flexcenter;
-                }
 
-                & i {
-                    font-size: 20px;
-                    padding-right: 20px;
-                    color: $grey;
-                }
-        
-                & span {
-                    padding-left: 10px;
-                    font-size: 16px;
-                    font-weight: 700;
-                }
-            } 
+                & li {
+                    @extend %flexcenter;
+                    font-size: 22px;
+                    background-color: $white-smoke;
+                    border-radius: 20px;
+                    height: 70px;
+                    width: 85%;
+                    padding: 10px 20px;
+                    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.10);
+                    margin-left: 10px;
+                    position: relative;
+            
+                    &:hover {
+                        @include appearance;
+                        background-color: $primary2;
+            
+                        i {
+                            color: $primary;
+                        }
+                    }
+                                
+                    &::before {
+                        counter-increment: number;
+                        content: counters(number,".") " ";
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -12px;
+                        background-color: $primary;
+                        color: #fff;
+                        @extend %flexcenter;
+                    }
+    
+                    & i {
+                        font-size: 20px;
+                        padding-right: 20px;
+                        color: $grey;
+                    }
+            
+                    & span {
+                        padding-left: 10px;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                } 
+    
+            }
         }
         
         #restaurants {
             background-color: $white-smoke;
             height: 1150px;
             padding: 30px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;  
+            @extend %flexwrapcenter; 
                     
             .card-restaurant {
                 max-width: 100%;
@@ -177,10 +175,7 @@ body, html {
         
                 & .menu_card {
                     max-width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    align-items: center;
+                    @extend %flexwrapcenter;
                                             
                     & .card-bloc {
                         background-color: $white;
@@ -290,10 +285,6 @@ body, html {
                         & .footer-icon {
                             padding-right: 10px;
                             font-size: 13px;
-                        }
-
-                        & p {
-                            color: $white;
                         }
                     }
                 }

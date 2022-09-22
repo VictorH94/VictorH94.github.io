@@ -4,7 +4,6 @@
 @import "animations/animations.css";
 @import "animations/animations.css";
 @import "animations/animations.css";
-@import "animations/animations.css";
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -49,7 +48,7 @@ td, th {
   padding: 0;
 }
 
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +73,51 @@ td, th {
   align-items: center;
 }
 
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
+#main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card, #main-ctnr #main-page-ctnr #restaurants, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list, #main-ctnr #menu-ctnr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +181,7 @@ td, th {
     transform: rotate(360deg);
   }
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +206,13 @@ td, th {
   align-items: center;
 }
 
+#main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card, #main-ctnr #main-page-ctnr #restaurants, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list, #main-ctnr #menu-ctnr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -175,7 +225,6 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
-  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -204,12 +253,12 @@ td, th {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin-top: -25px;
+  position: relative;
 }
 #main-ctnr .title-heart h2 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   padding: 30px 16px;
-  position: relative;
 }
 #main-ctnr .title-heart button {
   border: none;
@@ -233,10 +282,6 @@ td, th {
   transform: translateY(-50%) scale(1.02);
 }
 #main-ctnr #menu-ctnr {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   background-color: #f6f6f6;
 }
@@ -266,10 +311,6 @@ td, th {
   padding: 0;
   width: 100%;
   margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
   opacity: 0;
@@ -327,9 +368,6 @@ td, th {
   right: -22%;
   width: 16%;
   border-radius: 0 6px 6px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
   background-color: white;
@@ -343,6 +381,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -400,7 +439,7 @@ td, th {
   font-size: 13px;
 }
 
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -425,6 +464,13 @@ td, th {
   align-items: center;
 }
 
+#main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card, #main-ctnr #main-page-ctnr #restaurants, #main-ctnr #menu-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -437,7 +483,6 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
-  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -466,12 +511,12 @@ td, th {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin-top: -25px;
+  position: relative;
 }
 #main-ctnr .title-heart h2 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   padding: 30px 16px;
-  position: relative;
 }
 #main-ctnr .title-heart button {
   border: none;
@@ -495,10 +540,6 @@ td, th {
   transform: translateY(-50%) scale(1.02);
 }
 #main-ctnr #menu-ctnr {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   background-color: #f6f6f6;
 }
@@ -528,10 +569,6 @@ td, th {
   padding: 0;
   width: 100%;
   margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
   opacity: 0;
@@ -589,9 +626,6 @@ td, th {
   right: -22%;
   width: 16%;
   border-radius: 0 6px 6px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
   background-color: white;
@@ -605,6 +639,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -662,7 +697,7 @@ td, th {
   font-size: 13px;
 }
 
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -687,6 +722,13 @@ td, th {
   align-items: center;
 }
 
+#main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card, #main-ctnr #main-page-ctnr #restaurants, #main-ctnr #menu-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -699,7 +741,6 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
-  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -728,12 +769,12 @@ td, th {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin-top: -25px;
+  position: relative;
 }
 #main-ctnr .title-heart h2 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   padding: 30px 16px;
-  position: relative;
 }
 #main-ctnr .title-heart button {
   border: none;
@@ -757,10 +798,6 @@ td, th {
   transform: translateY(-50%) scale(1.02);
 }
 #main-ctnr #menu-ctnr {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   background-color: #f6f6f6;
 }
@@ -790,10 +827,6 @@ td, th {
   padding: 0;
   width: 100%;
   margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
   opacity: 0;
@@ -851,9 +884,6 @@ td, th {
   right: -22%;
   width: 16%;
   border-radius: 0 6px 6px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
   background-color: white;
@@ -867,6 +897,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -924,7 +955,7 @@ td, th {
   font-size: 13px;
 }
 
-#main-ctnr #main-page-ctnr #restaurant-choice li::before, #main-ctnr #main-page-ctnr #restaurant-choice li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -949,6 +980,13 @@ td, th {
   align-items: center;
 }
 
+#main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card, #main-ctnr #main-page-ctnr #restaurants, #main-ctnr #menu-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -961,7 +999,6 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
-  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -990,12 +1027,12 @@ td, th {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin-top: -25px;
+  position: relative;
 }
 #main-ctnr .title-heart h2 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   padding: 30px 16px;
-  position: relative;
 }
 #main-ctnr .title-heart button {
   border: none;
@@ -1019,10 +1056,6 @@ td, th {
   transform: translateY(-50%) scale(1.02);
 }
 #main-ctnr #menu-ctnr {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   background-color: #f6f6f6;
 }
@@ -1052,10 +1085,6 @@ td, th {
   padding: 0;
   width: 100%;
   margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
   opacity: 0;
@@ -1113,9 +1142,6 @@ td, th {
   right: -22%;
   width: 16%;
   border-radius: 0 6px 6px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
   background-color: white;
@@ -1129,6 +1155,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -1269,7 +1296,7 @@ body, html {
   counter-reset: number;
   list-style-type: none;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li {
   font-size: 22px;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -1280,14 +1307,14 @@ body, html {
   margin-left: 10px;
   position: relative;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li:hover {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li:hover {
   transform: scale(1.02);
   background-color: #f5edff;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li:hover i {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li:hover i {
   color: #9356DC;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li::before {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li::before {
   counter-increment: number;
   content: counters(number, ".") " ";
   width: 25px;
@@ -1298,12 +1325,12 @@ body, html {
   background-color: #9356DC;
   color: #fff;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li i {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li i {
   font-size: 20px;
   padding-right: 20px;
   color: #7e7e7e;
 }
-#main-ctnr #main-page-ctnr #restaurant-choice li span {
+#main-ctnr #main-page-ctnr #restaurant-choice ol li span {
   padding-left: 10px;
   font-size: 16px;
   font-weight: 700;
@@ -1312,10 +1339,6 @@ body, html {
   background-color: #f6f6f6;
   height: 1150px;
   padding: 30px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #main-page-ctnr #restaurants .card-restaurant {
   max-width: 100%;
@@ -1328,10 +1351,6 @@ body, html {
 }
 #main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card {
   max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 #main-ctnr #main-page-ctnr #restaurants .card-restaurant .menu_card .card-bloc {
   background-color: #fff;
@@ -1422,7 +1441,4 @@ body, html {
 #main-ctnr #footer .footer-ctnr .footer-ul .footer-li .footer-link .footer-icon {
   padding-right: 10px;
   font-size: 13px;
-}
-#main-ctnr #footer .footer-ctnr .footer-ul .footer-li .footer-link p {
-  color: #fff;
 }/*# sourceMappingURL=style.css.map */

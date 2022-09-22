@@ -19,7 +19,6 @@
                 font-size: 20px;
                 position: absolute;
                 left: 35px;
-                /* bottom: 12px; */
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
@@ -50,12 +49,12 @@
         background-color: $white-smoke;
         border-radius: 40px 40px 0 0;
         margin-top: -25px;
+        position: relative;
                      
         h2 {
             font-family: "Shrikhand", cursive;
             font-size: 28px;
             padding: 30px 16px;
-            position: relative;
         } 
     
         button {
@@ -85,10 +84,7 @@
     }
     
     #menu-ctnr {
-        display: flex;
-        flex-wrap: wrap;       
-        justify-content: center;
-        align-items: center;
+        @extend %flexwrapcenter;
         width: 100%;
         background-color: $white-smoke;
         
@@ -120,10 +116,8 @@
                 padding: 0;
                 width: 100%;
                 margin: 10px 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
+                @extend %flexwrapcenter;
+                
                 li {
                     opacity: 0;
                     animation: menuItemAppear 0.78s ease-in-out forwards;
@@ -179,9 +173,7 @@
                         right: -22%;
                         width: 16%;
                         border-radius: 0 6px 6px 0;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        @extend %flexcenter;
                         i {
                             background-color: white;
                             padding: 3px;
@@ -198,6 +190,7 @@
                         .menu-selected-checkbox { 
                             transition: 0.4s linear right;
                             right: 0;
+                            color: $tertiary;
                         }
 
                         i {
